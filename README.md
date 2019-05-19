@@ -6,4 +6,4 @@
 #### 3、点赞收藏按钮
 #### 4、音乐详情的展示
 ### 图片展示
-
+![image](https://github.com/xuesui/fortourism/raw/master/images/logo.jpg)
