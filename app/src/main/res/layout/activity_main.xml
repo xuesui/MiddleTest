@@ -1,19 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:background="#00BFFF"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="elf" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/picImage"
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:layout_below="@+id/main_toolbar"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="77dp"
+                android:layout_marginEnd="112dp"
+                android:src="@drawable/touxiang" />
 
 
-    <ListView
-        android:layout_width="395dp"
-        android:layout_height="715dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/list_view"/>
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/picImage"
+                android:layout_alignStart="@+id/picImage"
+                android:layout_alignEnd="@+id/picImage"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="请稍等。。" />
+
+            <TextView
+                android:id="@+id/music_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/music_name"
+                android:layout_alignStart="@+id/music_name"
+                android:layout_alignEnd="@+id/music_name"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="59dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="100dp"
+                android:gravity="center"
+                android:text="请稍等。。首次打开右下角按钮请等初始化加载完毕之后再点击" />
+
+            <Button
+                android:id="@+id/detail_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_toEndOf="@+id/music_author"
+                android:background="@drawable/ic_music_detail" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#FFFFFF">
+
+            <ImageButton
+                android:id="@+id/head_button"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/ic_disk_src"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户名"
+                android:textSize="10dp"
+                android:layout_below="@id/head_button"
+                android:id="@+id/name_button"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@id/head_button"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFFFF"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/main_listview"
+                android:layout_below="@id/name_button"
+                android:layout_marginTop="30dp">
+
+            </ListView>
+
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.DrawerLayout>
 </android.support.constraint.ConstraintLayout>
+
